@@ -6,7 +6,6 @@ app.get('/hello', () => {
     return 'hello'
 })
 
-app.listen({ port:4848}).then(() => {
-
+app.listen({ port:4848 }).then(() => {
     
 })
