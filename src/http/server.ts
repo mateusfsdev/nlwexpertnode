@@ -1,10 +1,16 @@
-import fastify from "fastify";
-
+import { voteOnPoll } from "./routes/vote-on-polls";
 import { cretaePoll } from "./routes/create-poll";
 import { getPoll } from "./routes/get-poll";
-import { voteOnPoll } from "./routes/vote-on-polls";
+import cookie from "@fastify/cookie";
+import fastify from "fastify";
 
 const app = fastify()
+
+app.register( cookie, {
+	secret: "polls-app-nlw-expert",
+	hook: 'onRequest',
+
+})
 
 app.register(cretaePoll)
 app.register(getPoll)
