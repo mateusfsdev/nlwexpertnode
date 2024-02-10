@@ -14,13 +14,13 @@ app.post('/polls', async (request) => {
 
     const { title } = createPollBody.parse(request.body)
 
-    await prisma.poll.create({
+    const poll = await prisma.poll.create({
         data: {
             title,
         }
     })
 
-    return 'hello nlw '
+    return poll
 })
 
 app.listen({ port:4848 }).then(() => {
