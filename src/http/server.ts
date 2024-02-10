@@ -20,7 +20,7 @@ app.post('/polls', async (request) => {
         }
     })
 
-    return poll
+    return poll.id
 })
 
 app.listen({ port:4848 }).then(() => {
