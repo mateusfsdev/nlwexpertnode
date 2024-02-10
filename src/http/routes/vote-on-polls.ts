@@ -23,7 +23,7 @@ export async function voteOnPoll(app: FastifyInstance) {
       sessionId = randomUUID()
       reply.setCookie('sessionId', sessionId, {
         path: '/',
-        maxAge: 60 * 60 * 24 * 30,
+        maxAge: 60 * 60 * 24,
         signed: true,
         httpOnly: true,
       })
