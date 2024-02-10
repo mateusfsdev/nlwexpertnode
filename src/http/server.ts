@@ -1,7 +1,10 @@
 import fastify from "fastify";
+import { PrismaClient } from '@prisma/client'
 import { z } from 'zod'
 
 const app = fastify()
+
+const prisma = new PrismaClient()
 
 app.post('/polls', (request) => {
 
@@ -11,7 +14,7 @@ app.post('/polls', (request) => {
 
     const { title } = createPollBody.parse(request.body)
 
-    
+
 
     return 'hello nlw '
 })
